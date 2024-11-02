@@ -21,7 +21,7 @@ int main() {
 	int buffer[] = {1};
 	int i = 0;
 
-	ft_memset(buffer, 50, 4);
+	ft_memset(buffer, 120, 4 * sizeof(int));
 	while (i < 1)
 	{
 		printf("%d ", buffer[i]);
