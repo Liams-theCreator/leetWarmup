@@ -18,13 +18,13 @@ void *ft_memset(void *b, int c, size_t len)
 
 int main() {
 	
-	char buffer[5];
+	int buffer[] = {1};
 	int i = 0;
 
-	ft_memset(buffer, ',', 5);
-	while (i < 5)
+	ft_memset(buffer, 50, 4);
+	while (i < 1)
 	{
-		printf("%c", buffer[i]);
+		printf("%d ", buffer[i]);
 		i++;
 	}
 
