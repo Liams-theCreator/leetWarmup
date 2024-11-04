@@ -54,8 +54,8 @@ char *ft_strtrim(char const *s1, char const *set)
 
 int main(void)
 {
-	char const s1[] = "xxdxsxdfxxxopHelloopxxxdfxxqlx";
-	char const set[] = "xqlofsd";
+	char const s1[] = "xpdHELLOxHELLOxpdx";
+	char const set[] = "xpd";
 	char *buff = ft_strtrim(s1, set);
 
 	printf("%s\n", buff);
