@@ -1,58 +1,63 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-size_t ft_strlen(const char *s)
+size_t ft_compare(char chr, char const *set)
 {
-	size_t len = 0;
-	while (s[len] != '\0')
-		len++;
-	return len;
-}
+	size_t i = 0;
 
-char *ft_strcpy(char *s1, char *s2)
-{
-	int i = 0;
-
-	while (s1[i] != '\0')
+	while (set[i] != '\0')
 	{
-		s2[i] = s1[i];
+		if (set[i] == chr)
+			return 1;
 		i++;
 	}
-	s2[i] = '\0';
-	return s2;
+	return 0;
+}
+
+size_t ft_strlen(const char *str)
+{
+	size_t len;
+
+	len = 0;
+	while (str[len] != '\0')
+		len++;
+	
+	return len;
 }
 
 char *ft_strtrim(char const *s1, char const *set)
 {
-	size_t slen = ft_strlen(s1);
-	size_t buffsize = 0;
-	size_t i = 0;
-	size_t j = 0;
-	char *buffer;
-	const char tmp[];
-	while (s1[i] != '\0')
-	{
-		if (s1[0] == *set || s1[slen - 1] == *set)
-			i++;
-		tmp[j] = s1[i];
-		buffsize++;
-		i++;
-		j++;
-	}
-	tmp[j] = '\0';
-	buffer = malloc(sizeof(char) * (buffsize + 1));
-	if (buffer == NULL)
+	size_t len;
+	size_t start;
+	size_t i;
+	char *buff;
+
+	start = 0;
+	i = 0;
+	len = ft_strlen(s1) - 1;
+	while (ft_compare(s1[start], set) == 1)
+		start++;
+	while (ft_compare(s1[len], set) == 1)
+		len--;
+	buff = malloc(sizeof(char) * (len + 1));
+	if (buff == NULL)
 		return NULL;
-	buffer = ft_strcpy(buffer, tmp);
-	return buffer;
+	while (start < len + 1)
+	{
+		buff[i] = s1[start];
+		start++;
+		i++;
+	}
+	buff[start] = '\0';
+	return buff;
 }
 
 int main(void)
 {
-	char const s1[] = "xHellox";
-	char const set = 'x';
+	char const s1[] = "xxdxsxdfxxxopHelloopxxxdfxxqlx";
+	char const set[] = "xqlofsd";
+	char *buff = ft_strtrim(s1, set);
 
-	char *str = ft_strtrim(s1, set);
-	printf("%s\n", str);
+	printf("%s\n", buff);
 	return 0;
 }
