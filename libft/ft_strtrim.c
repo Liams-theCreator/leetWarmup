@@ -1,36 +1,45 @@
-#include <stdio.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: imellali <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/06 18:17:23 by imellali          #+#    #+#             */
+/*   Updated: 2024/11/06 18:18:31 by imellali         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-size_t ft_compare(char chr, char const *set)
+size_t	ft_compare(char chr, char const *set)
 {
-	size_t i = 0;
+	size_t	i;
 
+	i = 0;
 	while (set[i] != '\0')
 	{
 		if (set[i] == chr)
-			return 1;
+			return (1);
 		i++;
 	}
-	return 0;
+	return (0);
 }
 
-size_t ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
-	size_t len;
+	size_t	len;
 
 	len = 0;
 	while (str[len] != '\0')
 		len++;
-	
-	return len;
+	return (len);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t len;
-	size_t start;
-	size_t i;
-	char *buff;
+	size_t	len;
+	size_t	start;
+	size_t	i;
+	char	*buff;
 
 	start = 0;
 	i = 0;
@@ -41,7 +50,7 @@ char *ft_strtrim(char const *s1, char const *set)
 		len--;
 	buff = malloc(sizeof(char) * (len + 1));
 	if (buff == NULL)
-		return NULL;
+		return (NULL);
 	while (start < len + 1)
 	{
 		buff[i] = s1[start];
@@ -49,15 +58,5 @@ char *ft_strtrim(char const *s1, char const *set)
 		i++;
 	}
 	buff[start] = '\0';
-	return buff;
-}
-
-int main(void)
-{
-	char const s1[] = "xpdHELLOxHELLOxpdx";
-	char const set[] = "xpd";
-	char *buff = ft_strtrim(s1, set);
-
-	printf("%s\n", buff);
-	return 0;
+	return (buff);
 }

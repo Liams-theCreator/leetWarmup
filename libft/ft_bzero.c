@@ -1,8 +1,22 @@
-void ft_bzero(void *s, size_t n)
-{
-	unsigned char *buf = s;
-	size_t i = 0;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: imellali <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/06 17:48:25 by imellali          #+#    #+#             */
+/*   Updated: 2024/11/06 17:49:04 by imellali         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+void	ft_bzero(void *s, size_t n)
+{
+	unsigned char	*buf;
+	size_t			i;
+
+	buf = s;
+	i = 0;
 	while (i < n)
 	{
 		buf[i] = 0;

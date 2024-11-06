@@ -1,27 +1,30 @@
-#include <string.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: imellali <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/06 18:02:23 by imellali          #+#    #+#             */
+/*   Updated: 2024/11/06 18:04:13 by imellali         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void *ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned const char *pstr = (unsigned const char *)s;
-	unsigned char chr = (unsigned char)c;
-	size_t len = 0;
+	unsigned const char	*pstr;
+	unsigned char		chr;
+	size_t				len;
 
+	len = 0;
+	pstr = (unsigned char *)s;
+	chr = (unsigned char)c;
 	while (len < n)
 	{
 		if (*pstr == chr)
-			return (void *)pstr;
+			return ((void *)pstr);
 		pstr++;
 		len++;
 	}
-	return (void *)0;
-}
-
-int main(void)
-{
-	const char buff[] = "Liams the Creator";
-	int chr = 'C';
-
-	printf("%p\n", memchr(buff, chr, 16));
-	printf("%p\n", ft_memchr(buff, chr, 16));
+	return ((void *)0);
 }

@@ -1,20 +1,32 @@
-#include <stdlib.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: imellali <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/06 18:13:11 by imellali          #+#    #+#             */
+/*   Updated: 2024/11/06 18:17:04 by imellali         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-size_t ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
-	size_t len = 0;
-	
+	size_t	len;
+
+	len = 0;
 	while (s[len] != '\0')
 		len++;
-	return len;
+	return (len);
 }
 
-size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t srclen = ft_strlen(src);
+	size_t	srclen;
+
+	srclen = ft_strlen(src);
 	if (dstsize == 0)
-		return srclen;
+		return (srclen);
 	if (dstsize > srclen)
 	{
 		while (*src != '\0')
@@ -25,49 +37,41 @@ size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		}
 		*dst = '\0';
 	}
-	return srclen;
+	return (srclen);
 }
 
-size_t ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t dstlen = ft_strlen(dst);
-	size_t srclen = ft_strlen(src);
-	size_t i = 0;
+	size_t	dstlen;
+	size_t	srclen;
+	size_t	i;
 
+	i = 0;
+	dstlen = ft_strlen(dst);
+	srclen = ft_strlen(src);
 	if (size == 0 || size < dstlen)
-		return size + srclen;
+		return (size + srclen);
 	while (i < size - dstlen && src[i] != '\0')
 	{
 		dst[dstlen + i] = src[i];
 		i++;
 	}
 	dst[dstlen + i] = '\0';
-	return dstlen + srclen;
+	return (dstlen + srclen);
 }
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	if (s1 == NULL || s2 == NULL)
-		return 0;
-	char *buffer;
-	size_t len = ft_strlen(s1) + ft_strlen(s2);
+	char	*buffer;
+	size_t	len;
 
+	if (s1 == NULL || s2 == NULL)
+		return (0);
+	len = ft_strlen(s1) + ft_strlen(s2);
 	buffer = malloc(sizeof(char) * (len + 1));
 	if (buffer == NULL)
-		return NULL;
+		return (NULL);
 	ft_strlcpy(buffer, s1, len);
 	ft_strlcat(buffer, s2, len);
-	return buffer;
-}
-
-int main(void)
-{
-	//const char s1[] = "";
-	//const char s2[] = "";
-	char *buf = ft_strjoin(NULL, NULL);
-	if (buf == NULL)
-		printf("error !");
-	else
-		printf("%s\n", buf);
-	return 0;
+	return (buffer);
 }
