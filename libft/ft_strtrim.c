@@ -9,6 +9,7 @@
 /*   Updated: 2024/11/06 18:18:31 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 size_t	ft_compare(char chr, char const *set)
 {

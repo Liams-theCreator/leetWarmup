@@ -6,9 +6,11 @@
 /*   By: imellali <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 18:08:43 by imellali          #+#    #+#             */
-/*   Updated: 2024/11/06 18:09:25 by imellali         ###   ########.fr       */
+/*   Updated: 2024/11/07 11:49:37 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 static size_t	ft_strlen(const char *s)
 {
