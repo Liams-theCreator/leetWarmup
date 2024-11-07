@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: imellali <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 18:17:23 by imellali          #+#    #+#             */
-/*   Updated: 2024/11/06 18:18:31 by imellali         ###   ########.fr       */
+/*   Created: 2024/11/07 12:27:41 by imellali          #+#    #+#             */
+/*   Updated: 2024/11/07 12:27:42 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 size_t	ft_compare(char chr, char const *set)
