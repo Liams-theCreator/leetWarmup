@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:27:49 by imellali          #+#    #+#             */
-/*   Updated: 2024/11/07 12:27:51 by imellali         ###   ########.fr       */
+/*   Updated: 2024/11/09 10:46:10 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	idx = start;
-	substr = malloc(sizeof(char) * len);
+	if (s == NULL)
+		return (NULL);
+	substr = malloc(sizeof(char) * (len + 1));
 	if (substr == NULL)
 		return (NULL);
 	while (s[idx] != '\0' && i < len)
@@ -32,3 +34,4 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	substr[i] = '\0';
 	return (substr);
 }
+	

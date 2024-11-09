@@ -12,14 +12,14 @@
 
 #include "libft.h"
 
-size_t	ft_compare(char s, char tofind)
+static size_t	ft_compare(char s, char tofind)
 {
 	if (s == tofind)
 		return (1);
 	return (0);
 }
 
-size_t	ft_countword(const char *str, char c)
+static size_t	ft_countword(const char *str, char c)
 {
 	size_t	word;
 	size_t	i;
@@ -38,7 +38,7 @@ size_t	ft_countword(const char *str, char c)
 	return (word);
 }
 
-char	*ft_mallocing(const char *str, char c)
+static char	*ft_mallocing(const char *str, char c)
 {
 	size_t	i;
 	size_t	len;

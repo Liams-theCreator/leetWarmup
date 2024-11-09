@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-size_t	ft_intlen(int num)
+static size_t	ft_intlen(int num)
 {
 	size_t	len;
 
@@ -32,7 +32,7 @@ size_t	ft_intlen(int num)
 	return (len);
 }
 
-char	*ft_insert(int n, size_t len)
+static char	*ft_insert(int n, size_t len)
 {
 	size_t	i;
 	char	*buffer;

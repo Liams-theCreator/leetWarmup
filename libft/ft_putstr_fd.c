@@ -12,20 +12,12 @@
 
 #include "libft.h"
 
-size_t	ft_strlen(char *s)
-{
-	size_t	len;
-
-	len = 0;
-	while (s[len] != '\0')
-		len++;
-	return (len);
-}
-
 void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	len;
-
-	len = ft_strlen(s);
+	
+	if (s == NULL)
+		return (NULL);
+	len = ft_strlen((const char *)s);
 	write(fd, &s, len);
 }
