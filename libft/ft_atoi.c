@@ -12,6 +12,22 @@
 
 #include "libft.h"
 
+static size_t	ft_check(char c)
+{
+	char	chr[7];
+	size_t	i;
+
+	i = 0;
+	ft_strlcpy(chr, " \t\v\r\n\f", 8);
+	while (chr[i] != '\0')
+	{
+		if (chr[i] == c)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
 int	ft_atoi(const char *str)
 {
 	int	i;
@@ -21,7 +37,7 @@ int	ft_atoi(const char *str)
 	i = 0;
 	sign = 1;
 	result = 0;
-	while (str[i] == '\t' || str[i] == ' ')
+	while (ft_check(str[i]) == 1)
 		i++;
 	if (str[i] == '+' || str[i] == '-')
 	{

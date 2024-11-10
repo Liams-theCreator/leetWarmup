@@ -32,27 +32,24 @@ static size_t	ft_intlen(int num)
 	return (len);
 }
 
-static char	*ft_insert(int n, size_t len)
+static void	ft_insert(char *buffer, int n, size_t len)
 {
 	size_t	i;
-	char	*buffer;
+	long	nbr;
 
 	i = 0;
-	buffer = malloc(sizeof(char) * (len));
-	if (buffer == NULL)
-		return (NULL);
-	if (n < 0)
+	nbr = n;
+	if (nbr < 0)
 	{
-		n = n * -1;
+		nbr = nbr * -1;
 		buffer[len - 1] = '-';
 	}
-	while (n != 0)
+	while (nbr != 0)
 	{
-		buffer[i] = (n % 10) + '0';
+		buffer[i] = (nbr % 10) + '0';
 		i++;
-		n /= 10;
+		nbr /= 10;
 	}
-	return (buffer);
 }
 
 char	*ft_itoa(int n)
@@ -60,7 +57,7 @@ char	*ft_itoa(int n)
 	size_t	len;
 	size_t	j;
 	char	*buffer;
-	char	*tmp;
+	char	tmp;
 
 	j = 0;
 	len = ft_intlen(n);
@@ -73,13 +70,15 @@ char	*ft_itoa(int n)
 		buffer[1] = '\0';
 		return (buffer);
 	}
-	tmp = ft_insert(n, len);
-	while (len != 0)
+	ft_insert(buffer ,n, len);
+	while (j < len)
 	{
-		buffer[j] = tmp[len - 1];
+		tmp = buffer[j];
+		buffer[j] = buffer[len - 1];
+		buffer[len - 1] = tmp;
 		len--;
 		j++;
 	}
-	buffer[j] = '\0';
+	buffer[j + len] = '\0';
 	return (buffer);
 }

@@ -6,29 +6,26 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:26:31 by imellali          #+#    #+#             */
-/*   Updated: 2024/11/07 12:26:33 by imellali         ###   ########.fr       */
+/*   Updated: 2024/11/10 11:18:28 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+static size_t	ft_slcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	srclen;
 
 	srclen = ft_strlen(src);
 	if (dstsize == 0)
 		return (srclen);
-	if (dstsize > srclen)
-	{
-		while (*src != '\0')
+	while (*src != '\0')
 		{
 			*dst = *src;
 			src++;
 			dst++;
 		}
 		*dst = '\0';
-	}
 	return (srclen);
 }
 
@@ -43,7 +40,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	buffer = malloc(sizeof(char) * (len + 1));
 	if (buffer == NULL)
 		return (NULL);
-	ft_strlcpy(buffer, s1, len);
+	ft_slcpy(buffer, s1, len);
 	ft_strlcat(buffer, s2, len);
 	return (buffer);
 }
