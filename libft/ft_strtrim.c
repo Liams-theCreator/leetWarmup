@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:27:41 by imellali          #+#    #+#             */
-/*   Updated: 2024/11/11 17:14:34 by imellali         ###   ########.fr       */
+/*   Updated: 2024/11/11 20:55:11 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	len;
 	size_t	start;
-	size_t	i;
 	char	*buff;
 
 	start = 0;
-	i = 0;
 	if (s1 == NULL)
 		return (NULL);
 	if (s1[0] == '\0')

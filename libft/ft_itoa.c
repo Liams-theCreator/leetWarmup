@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:24:16 by imellali          #+#    #+#             */
-/*   Updated: 2024/11/11 16:05:42 by imellali         ###   ########.fr       */
+/*   Updated: 2024/11/11 20:54:53 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static void	ft_insert(char *buffer, int n, size_t len)
 	}
 }
 
-void static	ft_swap(char *s1, size_t len)
+static void	ft_swap(char *s1, size_t len)
 {
 	size_t	i;
 	char	tmp;
@@ -72,10 +72,8 @@ void static	ft_swap(char *s1, size_t len)
 char	*ft_itoa(int n)
 {
 	size_t	len;
-	size_t	j;
 	char	*buffer;
 
-	j = 0;
 	len = ft_intlen(n);
 	buffer = malloc(sizeof(char) * (len + 1));
 	if (buffer == NULL)
