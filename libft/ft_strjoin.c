@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:26:31 by imellali          #+#    #+#             */
-/*   Updated: 2024/11/10 11:18:28 by imellali         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:04:09 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ static size_t	ft_slcpy(char *dst, const char *src, size_t dstsize)
 	if (dstsize == 0)
 		return (srclen);
 	while (*src != '\0')
-		{
-			*dst = *src;
-			src++;
-			dst++;
-		}
-		*dst = '\0';
+	{
+		*dst = *src;
+		src++;
+		dst++;
+	}
+	*dst = '\0';
 	return (srclen);
 }
 

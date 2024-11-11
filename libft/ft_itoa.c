@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:24:16 by imellali          #+#    #+#             */
-/*   Updated: 2024/11/07 13:55:27 by imellali         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:12:28 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ char	*ft_itoa(int n)
 		buffer[1] = '\0';
 		return (buffer);
 	}
-	ft_insert(buffer ,n, len);
+	ft_insert(buffer, n, len);
 	while (j < len)
 	{
 		tmp = buffer[j];

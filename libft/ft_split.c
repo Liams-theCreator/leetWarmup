@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:25:58 by imellali          #+#    #+#             */
-/*   Updated: 2024/11/07 12:26:00 by imellali         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:05:19 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static size_t	ft_compare(char s, char tofind)
 
 static int	ft_countword(const char *str, char c)
 {
-	int	word;
+	int		word;
 	size_t	i;
 
 	word = 0;
@@ -66,7 +66,7 @@ char	**ft_split(char const *s, char c)
 {
 	size_t	i;
 	size_t	idx;
-	int	word;
+	int		word;
 	char	**buffer;
 
 	i = 0;
