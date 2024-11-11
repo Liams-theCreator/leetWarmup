@@ -62,6 +62,20 @@ static char	*ft_mallocing(const char *str, char c)
 	return (buffer);
 }
 
+static char	**ft_free(char **buffer)
+{
+	size_t	i;
+
+	i = 0;
+	while (buffer[i] != NULL)
+	{
+		free(buffer[i]);
+		i++;
+	}
+	free(buffer);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	size_t	i;
@@ -93,15 +107,3 @@ char	**ft_split(char const *s, char c)
 	return (buffer);
 }
 
-static char	*ft_free(char **buffer)
-{
-	size_t	i;
-
-	i = 0;
-	while (buffer[i] != NULL)
-	{
-		free(buffer[i]);
-		i++;
-	}
-	free(buffer);
-}
