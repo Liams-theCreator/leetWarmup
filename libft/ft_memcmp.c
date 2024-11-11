@@ -21,8 +21,6 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	ts1 = (unsigned char *)s1;
 	ts2 = (unsigned char *)s2;
-	if (s1 == 0 || s2 == 0)
-		return (0);
 	while (i < n)
 	{
 		if (*ts1 != *ts2)

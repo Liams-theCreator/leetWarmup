@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:24:16 by imellali          #+#    #+#             */
-/*   Updated: 2024/11/11 15:12:28 by imellali         ###   ########.fr       */
+/*   Updated: 2024/11/11 16:05:42 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,28 @@ static void	ft_insert(char *buffer, int n, size_t len)
 	}
 }
 
+void static	ft_swap(char *s1, size_t len)
+{
+	size_t	i;
+	char	tmp;
+
+	i = 0;
+	while (i < len)
+	{
+		tmp = s1[i];
+		s1[i] = s1[len - 1];
+		s1[len - 1] = tmp;
+		len--;
+		i++;
+	}
+	s1[len + i] = '\0';
+}
+
 char	*ft_itoa(int n)
 {
 	size_t	len;
 	size_t	j;
 	char	*buffer;
-	char	tmp;
 
 	j = 0;
 	len = ft_intlen(n);
@@ -71,14 +87,6 @@ char	*ft_itoa(int n)
 		return (buffer);
 	}
 	ft_insert(buffer, n, len);
-	while (j < len)
-	{
-		tmp = buffer[j];
-		buffer[j] = buffer[len - 1];
-		buffer[len - 1] = tmp;
-		len--;
-		j++;
-	}
-	buffer[j + len] = '\0';
+	ft_swap(buffer, len);
 	return (buffer);
 }
