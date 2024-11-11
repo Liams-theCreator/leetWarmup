@@ -82,6 +82,8 @@ char	**ft_split(char const *s, char c)
 		if (s[i] != '\0' && ft_compare(s[i], c) == 0)
 		{
 			buffer[idx] = ft_mallocing((s + i), c);
+			if (buffer[idx] == NULL)
+				return (ft_free(buffer));
 			idx++;
 		}
 		while (s[i] != '\0' && ft_compare(s[i], c) == 0)
@@ -89,4 +91,17 @@ char	**ft_split(char const *s, char c)
 	}
 	buffer[idx] = (NULL);
 	return (buffer);
+}
+
+static char	*ft_free(char **buffer)
+{
+	size_t	i;
+
+	i = 0;
+	while (buffer[i] != NULL)
+	{
+		free(buffer[i]);
+		i++;
+	}
+	free(buffer);
 }
