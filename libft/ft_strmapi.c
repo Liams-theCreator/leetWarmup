@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:27:09 by imellali          #+#    #+#             */
-/*   Updated: 2024/11/07 12:27:11 by imellali         ###   ########.fr       */
+/*   Updated: 2024/11/11 20:28:53 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	i = 0;
 	j = 0;
-	if (s == NULL)
+	if (s == NULL || f == NULL)
 		return (NULL);
 	len = ft_strlen(s);
 	buffer = malloc(sizeof(char) * (len + 1));
