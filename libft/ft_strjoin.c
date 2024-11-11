@@ -40,7 +40,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	buffer = malloc(sizeof(char) * (len + 1));
 	if (buffer == NULL)
 		return (NULL);
-	ft_slcpy(buffer, s1, len);
-	ft_strlcat(buffer, s2, len);
+	ft_slcpy(buffer, s1, len + 1);
+	ft_strlcat(buffer, s2, len + 1);
 	return (buffer);
 }

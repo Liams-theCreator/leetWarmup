@@ -19,13 +19,15 @@ static size_t	ft_compare(char s, char tofind)
 	return (0);
 }
 
-static size_t	ft_countword(const char *str, char c)
+static int	ft_countword(const char *str, char c)
 {
-	size_t	word;
+	int	word;
 	size_t	i;
 
 	word = 0;
 	i = 0;
+	if (str == NULL)
+		return (-1);
 	while (str[i] != '\0')
 	{
 		while (str[i] != '\0' && ft_compare(str[i], c) == 1)
@@ -64,7 +66,7 @@ char	**ft_split(char const *s, char c)
 {
 	size_t	i;
 	size_t	idx;
-	size_t	word;
+	int	word;
 	char	**buffer;
 
 	i = 0;

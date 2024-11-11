@@ -37,20 +37,20 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	if (s1 == NULL)
 		return (NULL);
-	len = ft_strlen(s1) - 1;
+	len = ft_strlen(s1);
 	while (ft_compare(s1[start], set) == 1)
 		start++;
-	while (ft_compare(s1[len], set) == 1)
+	while (ft_compare(s1[len - 1], set) == 1)
 		len--;
 	buff = malloc(sizeof(char) * (len + 1));
 	if (buff == NULL)
 		return (NULL);
-	while (start < len + 1)
+	while (start < len)
 	{
 		buff[i] = s1[start];
 		start++;
 		i++;
 	}
-	buff[start] = '\0';
+	buff[i] = '\0';
 	return (buff);
 }
