@@ -6,18 +6,11 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:25:58 by imellali          #+#    #+#             */
-/*   Updated: 2024/11/11 15:05:19 by imellali         ###   ########.fr       */
+/*   Updated: 2024/11/12 09:46:16 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static size_t	ft_compare(char s, char tofind)
-{
-	if (s == tofind)
-		return (1);
-	return (0);
-}
 
 static int	ft_countword(const char *str, char c)
 {
@@ -30,11 +23,11 @@ static int	ft_countword(const char *str, char c)
 		return (-1);
 	while (str[i] != '\0')
 	{
-		while (str[i] != '\0' && ft_compare(str[i], c) == 1)
+		while (str[i] != '\0' && str[i] == c)
 			i++;
-		if (str[i] != '\0' && ft_compare(str[i], c) == 0)
+		if (str[i] != '\0' && str[i] != c)
 			word++;
-		while (str[i] != '\0' && ft_compare(str[i], c) == 0)
+		while (str[i] != '\0' && str[i] != c)
 			i++;
 	}
 	return (word);
@@ -48,7 +41,7 @@ static char	*ft_mallocing(const char *str, char c)
 
 	i = 0;
 	len = 0;
-	while (str[len] != '\0' && ft_compare(str[len], c) == 0)
+	while (str[len] != '\0' && str[len] != c)
 		len++;
 	buffer = malloc(sizeof(char) * (len + 1));
 	if (buffer == NULL)
@@ -76,34 +69,42 @@ static char	**ft_free(char **buffer)
 	return (NULL);
 }
 
-char	**ft_split(char const *s, char c)
+static char	**ft_insert(char const *s, char **buffer, char c)
 {
 	size_t	i;
 	size_t	idx;
-	int		word;
-	char	**buffer;
 
 	i = 0;
 	idx = 0;
-	word = ft_countword(s, c);
-	buffer = malloc(sizeof(char *) * (word + 1));
-	if (buffer == NULL)
-		return (NULL);
 	while (s[i] != '\0')
 	{
-		while (s[i] != '\0' && ft_compare(s[i], c) == 1)
+		while (s[i] != '\0' && s[i] == c)
 			i++;
-		if (s[i] != '\0' && ft_compare(s[i], c) == 0)
+		if (s[i] != '\0' && s[i] != c)
 		{
 			buffer[idx] = ft_mallocing((s + i), c);
 			if (buffer[idx] == NULL)
 				return (ft_free(buffer));
 			idx++;
 		}
-		while (s[i] != '\0' && ft_compare(s[i], c) == 0)
+		while (s[i] != '\0' && s[i] != c)
 			i++;
 	}
-	buffer[idx] = (NULL);
+	buffer[idx] = NULL;
 	return (buffer);
 }
 
+char	**ft_split(char const *s, char c)
+{
+	int		word;
+	char	**buffer;
+
+	if (s == NULL)
+		return (NULL);
+	word = ft_countword(s, c);
+	buffer = malloc(sizeof(char *) * (word + 1));
+	if (buffer == NULL)
+		return (NULL);
+	ft_insert(s, buffer, c);
+	return (buffer);
+}
