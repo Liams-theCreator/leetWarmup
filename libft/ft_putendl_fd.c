@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:25:25 by imellali          #+#    #+#             */
-/*   Updated: 2024/11/10 11:16:44 by imellali         ###   ########.fr       */
+/*   Updated: 2024/11/12 19:18:52 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,8 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	size_t	len;
-
-	if (s == NULL || fd < 0)
+	if (s == NULL)
 		return ;
-	len = ft_strlen(s);
-	write(fd, s, len);
+	write(fd, s, ft_strlen(s));
 	write(fd, "\n", 1);
 }

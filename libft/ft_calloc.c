@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:23:02 by imellali          #+#    #+#             */
-/*   Updated: 2024/11/07 12:23:05 by imellali         ###   ########.fr       */
+/*   Updated: 2024/11/12 19:16:54 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	i = 0;
 	fullsize = nmemb * size;
+	if (nmemb != 0 && (fullsize / nmemb) != size)
+		return (NULL);
 	buf = malloc(fullsize);
 	if (buf == NULL)
 		return (NULL);
