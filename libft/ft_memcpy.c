@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:24:49 by imellali          #+#    #+#             */
-/*   Updated: 2024/11/13 16:10:58 by imellali         ###   ########.fr       */
+/*   Updated: 2024/11/13 17:08:23 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	if (dest == NULL && src == NULL)
 		return (NULL);
 	if (dest == src)
-		return (NULL);
+		return (dest);
 	while (i < n)
 	{
 		dptr[i] = sptr[i];
