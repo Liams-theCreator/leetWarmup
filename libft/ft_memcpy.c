@@ -6,12 +6,11 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:24:49 by imellali          #+#    #+#             */
-/*   Updated: 2024/11/13 11:03:11 by imellali         ###   ########.fr       */
+/*   Updated: 2024/11/13 11:42:14 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
