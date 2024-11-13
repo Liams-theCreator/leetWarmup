@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:24:25 by imellali          #+#    #+#             */
-/*   Updated: 2024/11/07 12:24:27 by imellali         ###   ########.fr       */
+/*   Updated: 2024/11/13 11:30:44 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	size_t				len;
 
 	len = 0;
+	if (s == NULL)
+		return (0);
 	pstr = (unsigned char *)s;
 	chr = (unsigned char)c;
 	while (len < n)

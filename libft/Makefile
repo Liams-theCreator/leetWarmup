@@ -16,7 +16,7 @@ $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $<
 
 .PHONY: clean fclean all re
 

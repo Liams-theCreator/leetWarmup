@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:25:58 by imellali          #+#    #+#             */
-/*   Updated: 2024/11/12 09:46:16 by imellali         ###   ########.fr       */
+/*   Updated: 2024/11/13 10:51:48 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,5 @@ char	**ft_split(char const *s, char c)
 	buffer = malloc(sizeof(char *) * (word + 1));
 	if (buffer == NULL)
 		return (NULL);
-	ft_insert(s, buffer, c);
-	return (buffer);
+	return (ft_insert(s, buffer, c));
 }

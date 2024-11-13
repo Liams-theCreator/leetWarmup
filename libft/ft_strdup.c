@@ -6,13 +6,11 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:26:15 by imellali          #+#    #+#             */
-/*   Updated: 2024/11/11 18:38:35 by imellali         ###   ########.fr       */
+/*   Updated: 2024/11/13 11:20:01 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 char	*ft_strdup(const char *s)
 {
